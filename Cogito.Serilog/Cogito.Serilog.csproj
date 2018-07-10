@@ -10,4 +10,8 @@
     <Description>Various utilities for Serilog.</Description>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Serilog" Version="2.7.1" />
+  </ItemGroup>
+
 </Project>

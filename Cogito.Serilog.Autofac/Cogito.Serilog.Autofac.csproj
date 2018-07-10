@@ -11,4 +11,15 @@
     <Description>Autofac extension for Serilog.</Description>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Cogito.Autofac" Version="0.1.0-unstable0007" />
+    <PackageReference Include="Serilog.Settings.Configuration" Version="2.6.1" />
+    <PackageReference Include="Serilog.Sinks.Console" Version="3.1.1" />
+    <PackageReference Include="Serilog.Sinks.Trace" Version="2.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Cogito.Serilog\Cogito.Serilog.csproj" />
+  </ItemGroup>
+
 </Project>
