@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <PackageProjectUrl>https://github.com/wasabii/Cogito.Serilog</PackageProjectUrl>
+    <PackageIconUrl>https://cloverluxussc.blob.core.windows.net/public/cogito-nuget-icon.png</PackageIconUrl>
+    <Company>Jerome Haltom</Company>
+    <Authors>Jerome Haltom</Authors>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Description>Various utilities for Serilog.</Description>
+  </PropertyGroup>
+
+</Project>
