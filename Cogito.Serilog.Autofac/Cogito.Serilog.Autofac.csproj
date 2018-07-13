@@ -22,4 +22,8 @@
     <ProjectReference Include="..\Cogito.Serilog\Cogito.Serilog.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Destructuring\" />
+  </ItemGroup>
+
 </Project>
