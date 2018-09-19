@@ -28,18 +28,21 @@ namespace Cogito.Serilog.Autofac
         protected override void Load(ContainerBuilder builder)
         {
             builder.RegisterFromAttributes(typeof(AssemblyModule).Assembly);
-            builder.Register(ctx => ctx.Resolve<ILoggerConfigurationBuilder>().BuildConfiguration()).SingleInstance();
+
+            // provides logger configuration
+            builder.Register(ctx => ctx.Resolve<ILoggerConfigurationBuilder>().BuildConfiguration())
+                .SingleInstance();
 
             // root logger instance
             builder.Register((c, p) => c.ResolveOptional<LoggerConfiguration>()?.CreateLogger() ?? Log.Logger)
-                .Named<ILogger>("Root")
+                .Named<ILogger>("")
                 .SingleInstance();
 
             // register actual provider for logger instances
             builder.Register((c, p) =>
             {
                 // find root logger
-                var _logger = c.ResolveNamed<ILogger>("Root");
+                var _logger = c.ResolveNamed<ILogger>("");
 
                 var targetType = p.OfType<NamedParameter>()
                     .FirstOrDefault(np => np.Name == TargetTypeParameterName && np.Value is Type);
