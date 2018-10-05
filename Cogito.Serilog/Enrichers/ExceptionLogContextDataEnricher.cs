@@ -17,8 +17,6 @@ namespace Cogito.Serilog.Enrichers
         ILogEventEnricher
     {
 
-        static readonly object sync = new object();
-
         /// <summary>
         /// Map of <see cref="Exception"/> instance to captured context.
         /// </summary>
@@ -40,23 +38,21 @@ namespace Cogito.Serilog.Enrichers
         /// <param name="args"></param>
         static void CurrentDomain_FirstChanceException(object sender, FirstChanceExceptionEventArgs args)
         {
-            if (args.Exception == null)
-                return;
-
-            // store current context
-            lock (sync)
+            if (args.Exception != null)
                 if (context.TryGetValue(args.Exception, out var enricher) == false)
                     context.Add(args.Exception, LogContext.Clone());
         }
 
+        /// <summary>
+        /// Enriches the log event.
+        /// </summary>
+        /// <param name="logEvent"></param>
+        /// <param name="propertyFactory"></param>
         public void Enrich(LogEvent logEvent, ILogEventPropertyFactory propertyFactory)
         {
-            if (logEvent.Exception == null)
-                return;
-
-            // if exception has an enricher, apply to event
-            if (context.TryGetValue(logEvent.Exception, out var enricher))
-                enricher.Enrich(logEvent, propertyFactory);
+            if (logEvent.Exception != null)
+                if (context.TryGetValue(logEvent.Exception, out var enricher))
+                    enricher.Enrich(logEvent, propertyFactory);
         }
 
     }
