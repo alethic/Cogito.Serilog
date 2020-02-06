@@ -4,6 +4,7 @@ using System.Linq;
 using Autofac;
 using Autofac.Core;
 using Autofac.Core.Activators.Reflection;
+using Autofac.Core.Registration;
 
 using Cogito.Autofac;
 
@@ -15,8 +16,7 @@ namespace Cogito.Serilog.Autofac
     /// <summary>
     /// Provides typed instances of the Serilog Logger interface to components.
     /// </summary>
-    public class AssemblyModule :
-        Module
+    public class AssemblyModule : ModuleBase
     {
 
         const string TargetTypeParameterName = "Autofac.AutowiringPropertyInjector.InstanceType";
@@ -25,7 +25,7 @@ namespace Cogito.Serilog.Autofac
         /// Invoked to load the module.
         /// </summary>
         /// <param name="builder"></param>
-        protected override void Load(ContainerBuilder builder)
+        protected override void Register(ContainerBuilder builder)
         {
             builder.RegisterFromAttributes(typeof(AssemblyModule).Assembly);
 
@@ -55,7 +55,7 @@ namespace Cogito.Serilog.Autofac
             .ExternallyOwned();
         }
 
-        protected override void AttachToComponentRegistration(IComponentRegistry componentRegistry, IComponentRegistration registration)
+        protected override void AttachToComponentRegistration(IComponentRegistryBuilder componentRegistry, IComponentRegistration registration)
         {
             // ignore components that provide loggers
             if (registration.Services.OfType<TypedService>().Any(ts => ts.ServiceType == typeof(ILogger)))
