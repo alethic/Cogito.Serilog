@@ -1,18 +1,19 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27825.0
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29721.120
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{7271F8CF-C4EC-47FE-91F3-FF3331482C4F}"
 	ProjectSection(SolutionItems) = preProject
 		appveyor.yml = appveyor.yml
+		Directory.Build.props = Directory.Build.props
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cogito.Serilog", "Cogito.Serilog\Cogito.Serilog.csproj", "{CBA6505F-8781-4A5E-9A4A-6942EBD66ED4}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cogito.Serilog.Autofac", "Cogito.Serilog.Autofac\Cogito.Serilog.Autofac.csproj", "{7B309A5F-E9BC-46D0-B776-0B13CB65AEDF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cogito.Serilog.Tests", "Cogito.Serilog.Tests\Cogito.Serilog.Tests.csproj", "{1B6B5D05-9BA9-43BA-A4F2-35A85015FBBF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cogito.Serilog.Tests", "Cogito.Serilog.Tests\Cogito.Serilog.Tests.csproj", "{1B6B5D05-9BA9-43BA-A4F2-35A85015FBBF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
