@@ -10,8 +10,7 @@ namespace Cogito.Serilog.Autofac
     /// Provides the default <see cref="ILoggerConfigurator"/> instances in the container registry.
     /// </summary>
     [RegisterAs(typeof(ILoggerConfiguratorProvider))]
-    public class DefaultLoggerConfiguratorProvider :
-        ILoggerConfiguratorProvider
+    public class DefaultLoggerConfiguratorProvider : ILoggerConfiguratorProvider
     {
 
         readonly IEnumerable<ILoggerConfigurator> configuration;

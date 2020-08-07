@@ -28,9 +28,7 @@ namespace Cogito.Serilog.Autofac
         /// </summary>
         /// <param name="root"></param>
         /// <param name="providers"></param>
-        public DefaultLoggerConfigurationBuilder(
-            IConfigurationRoot root = null,
-            IEnumerable<ILoggerConfiguratorProvider> providers = null)
+        public DefaultLoggerConfigurationBuilder(IConfigurationRoot root = null, IEnumerable<ILoggerConfiguratorProvider> providers = null)
         {
             this.root = root;
             this.providers = providers ?? Enumerable.Empty<ILoggerConfiguratorProvider>();

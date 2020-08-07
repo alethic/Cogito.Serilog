@@ -14,8 +14,7 @@ namespace Cogito.Serilog.Autofac
     /// Applies registered <see cref="IDestructuringPolicy"/> instances.
     /// </summary>
     [RegisterAs(typeof(ILoggerConfigurator))]
-    public class DestructuringPolicyConfigurator :
-        ILoggerConfigurator
+    public class DestructuringPolicyConfigurator : ILoggerConfigurator
     {
 
         readonly IEnumerable<IDestructuringPolicy> policies;

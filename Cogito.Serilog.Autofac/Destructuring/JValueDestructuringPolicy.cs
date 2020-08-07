@@ -9,8 +9,7 @@ namespace Cogito.Serilog.Autofac.Destructuring
 {
 
     [RegisterAs(typeof(IDestructuringPolicy))]
-    public class JValueDestructuringPolicy :
-        IDestructuringPolicy
+    public class JValueDestructuringPolicy : IDestructuringPolicy
     {
 
         public bool TryDestructure(object value, ILogEventPropertyValueFactory propertyValueFactory, out LogEventPropertyValue result)
