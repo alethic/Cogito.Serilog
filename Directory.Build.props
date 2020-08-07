@@ -1,11 +1,11 @@
 <Project>
     <PropertyGroup>
         <Authors>Jerome Haltom</Authors>
-        <Company>Jerome Haltom</Company>
-        <RepositoryUrl>https://github.com/wasabii/Cogito.Serilog</RepositoryUrl>
+        <Company>Alethic Solutions</Company>
+        <RepositoryUrl>https://github.com/alethic/Cogito.Serilog</RepositoryUrl>
         <RepositoryType>git</RepositoryType>
         <PackageLicenseUrl></PackageLicenseUrl>
-        <PackageProjectUrl>https://github.com/wasabii/Cogito.Serilog</PackageProjectUrl>
+        <PackageProjectUrl>https://github.com/alethic/Cogito.Serilog</PackageProjectUrl>
         <PackageIconUrl>https://cloverluxussc.blob.core.windows.net/public/cogito-nuget-icon.png</PackageIconUrl>
         <PackageTags>serilog</PackageTags>
         <LangVersion>8.0</LangVersion>
