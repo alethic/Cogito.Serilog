@@ -1,20 +1,20 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>netcoreapp2.1</TargetFramework>
-    <IsPackable>false</IsPackable>
-  </PropertyGroup>
+    <PropertyGroup>
+        <TargetFrameworks>netcoreapp2.1;net48</TargetFrameworks>
+        <IsPackable>false</IsPackable>
+    </PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="FluentAssertions" Version="5.10.3" />
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.7.1" />
-    <PackageReference Include="MSTest.TestAdapter" Version="2.1.2" />
-    <PackageReference Include="MSTest.TestFramework" Version="2.1.2" />
-    <PackageReference Include="Serilog" Version="2.10.0" />
-  </ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="FluentAssertions" Version="5.10.3" />
+        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.7.1" />
+        <PackageReference Include="MSTest.TestAdapter" Version="2.1.2" />
+        <PackageReference Include="MSTest.TestFramework" Version="2.1.2" />
+        <PackageReference Include="Serilog" Version="2.10.0" />
+    </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\Cogito.Serilog\Cogito.Serilog.csproj" />
-  </ItemGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\Cogito.Serilog\Cogito.Serilog.csproj" />
+    </ItemGroup>
 
 </Project>
