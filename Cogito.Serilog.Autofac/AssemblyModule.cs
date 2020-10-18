@@ -73,16 +73,21 @@ namespace Cogito.Serilog.Autofac
                 if (!any)
                     return;
 
-                // attach event to inject logger
-                registration.Preparing += (sender, args) =>
+                registration.PipelineBuilding += (sender, args) =>
                 {
-                    // discover context logger instance from registered logger
-                    var logger = args.Context.Resolve<ILogger>()?.ForContext(registration.Activator.LimitType);
-                    if (logger == null)
-                        throw new NullReferenceException();
+                    // attach event to inject logger
+                    args.Use(global::Autofac.Core.Resolving.Pipeline.PipelinePhase.ParameterSelection, (context, next) =>
+                    {
+                        // discover context logger instance from registered logger
+                        var logger = context.Resolve<ILogger>()?.ForContext(registration.Activator.LimitType);
+                        if (logger == null)
+                            throw new NullReferenceException();
 
-                    // append logger parameter
-                    args.Parameters = new[] { TypedParameter.From(logger) }.Concat(args.Parameters);
+                        // append logger parameter
+                        context.ChangeParameters(context.Parameters.Append(TypedParameter.From(logger)));
+
+                        next(context);
+                    });
                 };
             }
         }
