@@ -16,21 +16,20 @@ namespace Cogito.Serilog.Autofac
     /// Builds the default configuration.
     /// </summary>
     [RegisterAs(typeof(ILoggerConfigurationBuilder))]
-    public class DefaultLoggerConfigurationBuilder :
-        ILoggerConfigurationBuilder
+    public class DefaultLoggerConfigurationBuilder : ILoggerConfigurationBuilder
     {
 
         readonly IEnumerable<ILoggerConfiguratorProvider> providers;
-        readonly IConfigurationRoot root;
+        readonly IConfiguration configuration;
 
         /// <summary>
         /// Initializes a new instance.
         /// </summary>
-        /// <param name="root"></param>
+        /// <param name="configuration"></param>
         /// <param name="providers"></param>
-        public DefaultLoggerConfigurationBuilder(IConfigurationRoot root = null, IEnumerable<ILoggerConfiguratorProvider> providers = null)
+        public DefaultLoggerConfigurationBuilder(IConfiguration configuration = null, IEnumerable<ILoggerConfiguratorProvider> providers = null)
         {
-            this.root = root;
+            this.configuration = configuration;
             this.providers = providers ?? Enumerable.Empty<ILoggerConfiguratorProvider>();
         }
 
@@ -72,8 +71,8 @@ namespace Cogito.Serilog.Autofac
                 .WriteTo.Trace();
 
             // append configuration if presented
-            if (root != null)
-                builder = builder.ReadFrom.Configuration(root);
+            if (configuration != null)
+                builder = builder.ReadFrom.Configuration(configuration);
 
             return builder;
         }
