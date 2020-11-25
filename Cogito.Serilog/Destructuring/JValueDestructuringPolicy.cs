@@ -1,14 +1,11 @@
-﻿using Cogito.Autofac;
-
-using Newtonsoft.Json.Linq;
+﻿using Newtonsoft.Json.Linq;
 
 using Serilog.Core;
 using Serilog.Events;
 
-namespace Cogito.Serilog.Autofac.Destructuring
+namespace Cogito.Serilog.Destructuring
 {
 
-    [RegisterAs(typeof(IDestructuringPolicy))]
     public class JValueDestructuringPolicy : IDestructuringPolicy
     {
 

@@ -2,18 +2,15 @@
 using System.Collections.Generic;
 using System.Linq;
 
-using Cogito.Autofac;
-
 using Serilog;
 using Serilog.Core;
 
-namespace Cogito.Serilog.Autofac
+namespace Cogito.Serilog
 {
 
     /// <summary>
     /// Applies registered <see cref="IDestructuringPolicy"/> instances.
     /// </summary>
-    [RegisterAs(typeof(ILoggerConfigurator))]
     public class DestructuringPolicyConfigurator : ILoggerConfigurator
     {
 

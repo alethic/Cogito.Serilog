@@ -2,20 +2,17 @@
 using System.Collections.Generic;
 using System.Linq;
 
-using Cogito.Autofac;
-
 using Microsoft.Extensions.Configuration;
 
 using Serilog;
 using Serilog.Sinks.SystemConsole.Themes;
 
-namespace Cogito.Serilog.Autofac
+namespace Cogito.Serilog
 {
 
     /// <summary>
     /// Builds the default configuration.
     /// </summary>
-    [RegisterAs(typeof(ILoggerConfigurationBuilder))]
     public class DefaultLoggerConfigurationBuilder : ILoggerConfigurationBuilder
     {
 

@@ -1,24 +1,21 @@
 ﻿using System.Linq;
 
-using Cogito.Autofac;
-
 using Newtonsoft.Json.Linq;
 
 using Serilog.Core;
 using Serilog.Events;
 
-namespace Cogito.Serilog.Autofac.Destructuring
+namespace Cogito.Serilog.Destructuring
 {
 
-    [RegisterAs(typeof(IDestructuringPolicy))]
-    public class JArrayDestructuringPolicy : IDestructuringPolicy
+    public class JObjectDestructuringPolicy : IDestructuringPolicy
     {
 
         public bool TryDestructure(object value, ILogEventPropertyValueFactory propertyValueFactory, out LogEventPropertyValue result)
         {
-            if (value is JArray json)
+            if (value is JObject json)
             {
-                result = propertyValueFactory.CreatePropertyValue(json.ToArray(), true);
+                result = propertyValueFactory.CreatePropertyValue(json.Properties().ToDictionary(i => i.Name, i => i.Value), true);
                 return true;
             }
 

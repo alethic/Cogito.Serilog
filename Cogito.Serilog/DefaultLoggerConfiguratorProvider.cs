@@ -1,15 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 
-using Cogito.Autofac;
-
-namespace Cogito.Serilog.Autofac
+namespace Cogito.Serilog
 {
 
     /// <summary>
     /// Provides the default <see cref="ILoggerConfigurator"/> instances in the container registry.
     /// </summary>
-    [RegisterAs(typeof(ILoggerConfiguratorProvider))]
     public class DefaultLoggerConfiguratorProvider : ILoggerConfiguratorProvider
     {
 

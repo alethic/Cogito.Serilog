@@ -13,8 +13,7 @@ namespace Cogito.Serilog.Enrichers
     /// Enriches log events that contain an <see cref="Exception"/> with the <see cref="LogContext"/> in scope when
     /// the <see cref="Exception"/> is thrown.
     /// </summary>
-    public class ExceptionLogContextDataEnricher :
-        ILogEventEnricher
+    public class ExceptionLogContextDataEnricher : ILogEventEnricher
     {
 
         /// <summary>
