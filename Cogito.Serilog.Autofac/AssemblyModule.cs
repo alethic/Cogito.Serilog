@@ -10,6 +10,7 @@ using Autofac.Core.Resolving.Pipeline;
 
 using Cogito.Autofac;
 using Cogito.Serilog.Destructuring;
+using Cogito.Serilog.Enrichers;
 
 using Serilog;
 using Serilog.Core;
@@ -34,7 +35,17 @@ namespace Cogito.Serilog.Autofac
             builder.RegisterFromAttributes(typeof(AssemblyModule).Assembly);
             builder.RegisterType<DefaultLoggerConfigurationBuilder>().As<ILoggerConfigurationBuilder>();
             builder.RegisterType<DefaultLoggerConfiguratorProvider>().As<ILoggerConfiguratorProvider>();
+
+            // default configurators
+            builder.RegisterType<EnricherLoggerConfigurator>().As<ILoggerConfigurator>();
             builder.RegisterType<DestructuringPolicyConfigurator>().As<ILoggerConfigurator>();
+            builder.RegisterType<ExceptionLoggerConfigurator>().As<ILoggerConfigurator>();
+
+            // default enrichers
+            builder.RegisterType<ExceptionLogContextDataEnricher>().As<ILogEventEnricher>();
+            builder.RegisterType<HostEnvironmentEnricher>().As<ILogEventEnricher>();
+
+            // default destructuring policies
             builder.RegisterType<JArrayDestructuringPolicy>().As<IDestructuringPolicy>();
             builder.RegisterType<JObjectDestructuringPolicy>().As<IDestructuringPolicy>();
             builder.RegisterType<JValueDestructuringPolicy>().As<IDestructuringPolicy>();
