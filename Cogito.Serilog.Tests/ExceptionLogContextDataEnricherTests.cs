@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
 
+using Cogito.Serilog.Enrichers;
+
 using FluentAssertions;
 
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -21,7 +23,7 @@ namespace Cogito.Serilog.Tests
         {
             var events = new List<LogEvent>();
             var logger = new LoggerConfiguration()
-                .Enrich.WithExceptionLogContext()
+                .Enrich.With<ExceptionLogContextDataEnricher>()
                 .WriteTo.Sink(new DelegateLogEventSink(e => events.Add(e)))
                 .CreateLogger();
 
