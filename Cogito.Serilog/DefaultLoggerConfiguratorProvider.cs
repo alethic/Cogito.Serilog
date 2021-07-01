@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Cogito.Serilog
 {
@@ -16,7 +17,7 @@ namespace Cogito.Serilog
         /// Initializes a new instance.
         /// </summary>
         /// <param name="configuration"></param>
-        public DefaultLoggerConfiguratorProvider(IEnumerable<ILoggerConfigurator> configuration)
+        public DefaultLoggerConfiguratorProvider(IOrderedEnumerable<ILoggerConfigurator> configuration)
         {
             this.configuration = configuration ?? throw new ArgumentNullException(nameof(configuration));
         }
