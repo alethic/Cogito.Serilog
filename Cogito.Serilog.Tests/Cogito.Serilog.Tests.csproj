@@ -14,6 +14,7 @@
     </ItemGroup>
 
     <ItemGroup>
+        <ProjectReference Include="..\Cogito.Serilog.Autofac\Cogito.Serilog.Autofac.csproj" />
         <ProjectReference Include="..\Cogito.Serilog\Cogito.Serilog.csproj" />
     </ItemGroup>
 

@@ -32,6 +32,8 @@ namespace Cogito.Serilog.Autofac
         /// <param name="builder"></param>
         protected override void Register(ContainerBuilder builder)
         {
+            builder.RegisterModule<Cogito.Autofac.AssemblyModule>();
+
             builder.RegisterFromAttributes(typeof(AssemblyModule).Assembly);
             builder.RegisterType<DefaultLoggerConfigurationBuilder>().As<ILoggerConfigurationBuilder>();
             builder.RegisterType<DefaultLoggerConfiguratorProvider>().As<ILoggerConfiguratorProvider>();
