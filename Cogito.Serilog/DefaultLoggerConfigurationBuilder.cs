@@ -5,7 +5,6 @@ using System.Linq;
 using Microsoft.Extensions.Configuration;
 
 using Serilog;
-using Serilog.Sinks.SystemConsole.Themes;
 
 namespace Cogito.Serilog
 {
@@ -62,10 +61,8 @@ namespace Cogito.Serilog
                 throw new ArgumentNullException(nameof(builder));
 
             builder = builder
-                .Enrich.FromLogContext()
-                .MinimumLevel.Debug()
-                .WriteTo.Console(theme: SystemConsoleTheme.Literate)
-                .WriteTo.Trace();
+                .MinimumLevel.Information()
+                .Enrich.FromLogContext();
 
             // append configuration if presented
             if (configuration != null)
