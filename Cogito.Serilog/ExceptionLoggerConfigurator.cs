@@ -31,7 +31,8 @@ namespace Cogito.Serilog
             return configuration
                 .Enrich.WithExceptionDetails(new DestructuringOptionsBuilder()
                     .WithDefaultDestructurers()
-                    .WithDestructurers(destructurers));
+                    .WithDestructurers(destructurers)
+                    .WithIgnoreStackTraceAndTargetSiteExceptionFilter());
         }
 
     }

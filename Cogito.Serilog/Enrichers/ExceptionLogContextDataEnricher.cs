@@ -38,7 +38,7 @@ namespace Cogito.Serilog.Enrichers
         static void CurrentDomain_FirstChanceException(object sender, FirstChanceExceptionEventArgs args)
         {
             if (args.Exception != null)
-                if (context.TryGetValue(args.Exception, out var enricher) == false)
+                if (context.TryGetValue(args.Exception, out _) == false)
                     context.Add(args.Exception, LogContext.Clone());
         }
 
