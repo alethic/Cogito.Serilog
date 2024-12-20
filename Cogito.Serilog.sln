@@ -1,19 +1,33 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.29721.120
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35527.113 d17.12
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{7271F8CF-C4EC-47FE-91F3-FF3331482C4F}"
 	ProjectSection(SolutionItems) = preProject
+		.gitattributes = .gitattributes
+		.gitignore = .gitignore
 		appveyor.yml = appveyor.yml
+		Cogito.Serilog.dist.msbuildproj = Cogito.Serilog.dist.msbuildproj
+		.github\workflows\Cogito.Serilog.yml = .github\workflows\Cogito.Serilog.yml
 		Directory.Build.props = Directory.Build.props
+		GitVersion.yml = GitVersion.yml
+		global.json = global.json
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cogito.Serilog", "Cogito.Serilog\Cogito.Serilog.csproj", "{CBA6505F-8781-4A5E-9A4A-6942EBD66ED4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cogito.Serilog", "src\Cogito.Serilog\Cogito.Serilog.csproj", "{CBA6505F-8781-4A5E-9A4A-6942EBD66ED4}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cogito.Serilog.Autofac", "Cogito.Serilog.Autofac\Cogito.Serilog.Autofac.csproj", "{7B309A5F-E9BC-46D0-B776-0B13CB65AEDF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cogito.Serilog.Autofac", "src\Cogito.Serilog.Autofac\Cogito.Serilog.Autofac.csproj", "{7B309A5F-E9BC-46D0-B776-0B13CB65AEDF}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cogito.Serilog.Tests", "Cogito.Serilog.Tests\Cogito.Serilog.Tests.csproj", "{1B6B5D05-9BA9-43BA-A4F2-35A85015FBBF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cogito.Serilog.Tests", "src\Cogito.Serilog.Tests\Cogito.Serilog.Tests.csproj", "{1B6B5D05-9BA9-43BA-A4F2-35A85015FBBF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dist", "dist", "{49376E09-31A8-43AE-9A22-9F34A3DEC6B7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{30CA5786-F236-40AD-96CD-1590BB7FC6AC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dist-nuget", "src\dist-nuget\dist-nuget.csproj", "{E19E6FFF-84A5-4466-9DBA-442BD6D8E678}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dist-tests", "src\dist-tests\dist-tests.csproj", "{25FC413A-C3B9-4BF9-9DCC-001916066CE7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,9 +47,24 @@ Global
 		{1B6B5D05-9BA9-43BA-A4F2-35A85015FBBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1B6B5D05-9BA9-43BA-A4F2-35A85015FBBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1B6B5D05-9BA9-43BA-A4F2-35A85015FBBF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E19E6FFF-84A5-4466-9DBA-442BD6D8E678}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E19E6FFF-84A5-4466-9DBA-442BD6D8E678}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E19E6FFF-84A5-4466-9DBA-442BD6D8E678}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E19E6FFF-84A5-4466-9DBA-442BD6D8E678}.Release|Any CPU.Build.0 = Release|Any CPU
+		{25FC413A-C3B9-4BF9-9DCC-001916066CE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{25FC413A-C3B9-4BF9-9DCC-001916066CE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{25FC413A-C3B9-4BF9-9DCC-001916066CE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{25FC413A-C3B9-4BF9-9DCC-001916066CE7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{CBA6505F-8781-4A5E-9A4A-6942EBD66ED4} = {30CA5786-F236-40AD-96CD-1590BB7FC6AC}
+		{7B309A5F-E9BC-46D0-B776-0B13CB65AEDF} = {30CA5786-F236-40AD-96CD-1590BB7FC6AC}
+		{1B6B5D05-9BA9-43BA-A4F2-35A85015FBBF} = {30CA5786-F236-40AD-96CD-1590BB7FC6AC}
+		{E19E6FFF-84A5-4466-9DBA-442BD6D8E678} = {49376E09-31A8-43AE-9A22-9F34A3DEC6B7}
+		{25FC413A-C3B9-4BF9-9DCC-001916066CE7} = {49376E09-31A8-43AE-9A22-9F34A3DEC6B7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FF4B3820-4206-4316-82A5-DEA5792C6A71}
