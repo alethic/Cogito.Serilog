@@ -9,7 +9,7 @@ Publishes 2 packages: `Cogito.Serilog`, `Cogito.Serilog.Autofac`.
 ## Build and test
 
 ```shell
-dotnet restore Cogito.Serilog.sln
+dotnet restore Cogito.Serilog.slnx
 dotnet msbuild -p:Configuration=Release Cogito.Serilog.dist.msbuildproj
 ```
 

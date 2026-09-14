@@ -15,7 +15,7 @@ Each package carries its own README with the detail; the links above go to nuget
 ## Building
 
 ```shell
-dotnet restore Cogito.Serilog.sln
+dotnet restore Cogito.Serilog.slnx
 dotnet msbuild -p:Configuration=Release Cogito.Serilog.dist.msbuildproj
 ```
 

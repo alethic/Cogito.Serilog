@@ -1,0 +1,21 @@
+<Solution>
+  <Folder Name="/dist/">
+    <Project Path="src/dist-nuget/dist-nuget.csproj" />
+    <Project Path="src/dist-tests/dist-tests.csproj" />
+  </Folder>
+  <Folder Name="/Solution Items/">
+    <File Path=".gitattributes" />
+    <File Path=".github/workflows/Cogito.Serilog.yml" />
+    <File Path=".gitignore" />
+    <File Path="appveyor.yml" />
+    <File Path="Cogito.Serilog.dist.msbuildproj" />
+    <File Path="Directory.Build.props" />
+    <File Path="GitVersion.yml" />
+    <File Path="global.json" />
+  </Folder>
+  <Folder Name="/src/">
+    <Project Path="src/Cogito.Serilog.Autofac/Cogito.Serilog.Autofac.csproj" />
+    <Project Path="src/Cogito.Serilog.Tests/Cogito.Serilog.Tests.csproj" />
+    <Project Path="src/Cogito.Serilog/Cogito.Serilog.csproj" />
+  </Folder>
+</Solution>
